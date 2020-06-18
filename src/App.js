@@ -3,6 +3,7 @@ import React from 'react';
 import TimeoutUseExample from './components/TimeoutUseExample'
 import IntervalUseExample from './components/IntervalUseExample'
 import PreviousUseExample from './components/PreviousUseExample'
+import ClickInsideExample from './components/ClickInsideUseExample'
 
 const styles = {
   container: {
@@ -27,6 +28,7 @@ const App = () => {
           <div style={styles.text}>useTimeout Hook</div><TimeoutUseExample />
           <div style={styles.text}>useInterval Hook</div><IntervalUseExample />
           <div style={styles.text}>usePrevious Hook</div><PreviousUseExample />
+          <div style={styles.text}>useClickInside Hook</div><ClickInsideExample onClickInside={() => alert('clicou dentro')}/>
         </div> 
     )
 }

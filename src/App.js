@@ -1,35 +1,27 @@
 import React from 'react';
 
+import GlobalStyle from './GlobalStyle.js'
+
+import { Container } from './styles';
+
+import Card from './components/Card';
+
 import TimeoutUseExample from './components/TimeoutUseExample'
 import IntervalUseExample from './components/IntervalUseExample'
 import PreviousUseExample from './components/PreviousUseExample'
 import ClickInsideExample from './components/ClickInsideUseExample'
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    'alignItems': 'center',
-    'justifyContent': 'space-around',
-    flex: 1,
-    height: '700px',
-    fontSize: 18
-  },
-  text: {
-    fontSize: 36,
-    color: 'red'
-  }
-
-}
-
 const App = () => {
     return (
-        <div style={styles.container}>
-          <div style={styles.text}>useTimeout Hook</div><TimeoutUseExample />
-          <div style={styles.text}>useInterval Hook</div><IntervalUseExample />
-          <div style={styles.text}>usePrevious Hook</div><PreviousUseExample />
-          <div style={styles.text}>useClickInside Hook</div><ClickInsideExample onClickInside={() => alert('clicou dentro')}/>
-        </div> 
+      <>
+        <GlobalStyle darcula />
+        <Container>
+          <Card name='useTimeout Hook' component={TimeoutUseExample} />
+          <Card name='useInterval Hook' component={IntervalUseExample} />
+          <Card name='usePrevious Hook' component={PreviousUseExample} />
+          <Card name='useClickInside Hook' component={ClickInsideExample} onClickInside={() => alert('Click Inside')}/>
+        </Container>
+      </>
     )
 }
 
